@@ -1,125 +1,123 @@
-*, 
+*,
 *:before,
-*:after{
+*:after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     height: 100vh;
     background: #0F62FE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
 }
-#head-text{
-    margin-top: 50px;
-    margin-left: 10px;
-    font-family: sans-serif;
-    color: #0F62FE;
-}
-.container{
+
+.container {
     width: 40%;
-    top: 30%;
-    left: 50%;
     background: white;
-    border-radius: 1px;
+    border-radius: 8px;
+    padding: 20px;
     min-width: 450px;
-    position: absolute;
-    min-height: 100px;
-    transform: translate(-50%,-50%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-#newtask{
-    position: relative;
-    padding: 30px 20px;
+
+#head-text {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #0F62FE;
+    text-align: center;
 }
-#newtask input{
-    width: 75%;
+
+#newtask {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#newtask input {
+    flex: 1;
     height: 45px;
     padding: 12px;
-    color: #111111;
-    font-weight: 500;
-    position: relative;
-    border-radius: 5px;
     font-size: 15px;
     border: 2px solid #33B1FF;
+    border-radius: 5px;
+    margin-right: 10px;
 }
-#newtask input:focus{
+
+#newtask input:focus {
     outline: none;
     border-color: #0D75EC;
 }
-#newtask button{
-    position: relative;
-    float: right;
-    font-weight: 500;
-    font-size: 16px;
-    background-color: #0F62FE;
 
-    border: none;
-    color: #FFFFFF;
-    cursor: pointer;
-    outline: none;
-    width: 20px;
+#newtask button {
     height: 45px;
+    background-color: #0F62FE;
+    border: none;
+    color: white;
     border-radius: 5px;
-    font-family: sans-serif;
+    padding: 0 20px;
+    cursor: pointer;
+    font-size: 16px;
 }
-.task{
-    position: absolute;
-    border-radius: 0px;
-    width: 100;
-    /* position: relative; */
-    background-color: #FFFFFF;
-    padding: 30px 20px;
-    margin-top: 0px;
-    justify-content: space-between;
-}
-.tasks.overflow{
-    overflow-y: auto;
+
+.tasks {
     max-height: 300px;
-    }
-    .tasks::-webkit-scrollbar {
-        width: 10px;
-        }
-        .tasks::-webkit-scrollbar-track {
-            background: #BAE6FF;
-            border-radius: 25px;
-        }
-        .tasks::-webkit-scrollbar-thumb {
-            background: #0D75EC;
-            border-radius: 25px;
-        } 
-        .task{
-            border-radius: 5px;
-            align-items: center;
-            justify-content: space-between;
-            cursor: printer;
-            height: 50px;
-            margin-bottom: 8px;
-            padding: 10px 10px;
-            display: flex;
-            width: 100px;
-        }
+    overflow-y: auto;
+}
 
-        .delete{
-            right: 5px;
-            padding: 5px 5px;
-            background: #FFFFFF;
-            border-radius: 4px;
-            transform-origin: top right;
-            box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
-            transition: transform 0.2s ease;
-            z-index: 10;
-        }
+.tasks::-webkit-scrollbar {
+    width: 8px;
+}
 
-        #check-task{
-            margin-right: 20px;
-        }
+.tasks::-webkit-scrollbar-track {
+    background: #BAE6FF;
+    border-radius: 25px;
+}
 
-        .task label{
-            font-family: sans-serif;
-            font-size: 15px;
-            font-weight: 400;
-            display: flex;
-            align-items: flex-start;
-        }
+.tasks::-webkit-scrollbar-thumb {
+    background: #0D75EC;
+    border-radius: 25px;
+}
 
-        .task label
+.task {
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    height: 50px;
+    margin-bottom: 8px;
+    padding: 10px 15px; /* Adjusted for better alignment */
+    display: flex; /* Ensures all child elements align in a row */
+    width: 100%;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task label {
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    display: flex;
+    align-items: center; /* Ensures the checkbox aligns vertically with the text */
+    gap: 10px; /* Adds spacing between the checkbox and text */
+}
+
+.task p {
+    flex: 1;
+    margin-left: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.task p.checked {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task .delete {
+    cursor: pointer;
+    color: red;
+    font-size: 18px;
+}
